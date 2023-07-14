@@ -11,7 +11,9 @@ ROBOTSTXT_OBEY = False
 # SCRAPEOPS_PROXY_SETTINGS = {'country': 'us'}
 
 # Add In The ScrapeOps Monitoring Extension
-EXTENSIONS = {}
+EXTENSIONS = {
+    'scrapy_cloud_browser.CloudBrowserExtension': 500,
+}
 
 LOG_LEVEL = "INFO"
 
@@ -25,10 +27,6 @@ RETRY_HTTP_CODES = [503]
 # Max Concurrency On ScrapeOps Proxy Free Plan is 1 thread
 CONCURRENT_REQUESTS = 100
 
-DOWNLOAD_HANDLERS = {
-    "http": "scrapy_cloud_browser.CloudBrowserHandler",
-    "https": "scrapy_cloud_browser.CloudBrowserHandler",
-}
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 
 CLOUD_BROWSER = {
